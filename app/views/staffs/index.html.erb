@@ -1,0 +1,36 @@
+<h1>ALL Staff</h1>
+
+
+  <table class= "table table-striped custab table-hover">
+  <thead class="thead-inverse">
+    <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>email</th>
+      <th>Birthday</th>
+      <th>Age</th>
+      <th>Job description</th>
+      <th>Region</th>
+      <th colspan="3">Memo</th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+    <% @staffs.each do |staff| %>
+      <tr>
+        <td><%= staff.id %></td>
+        <td><%= staff.name %></td>
+        <td><%= staff.email %></td>
+        <td><%= staff.birthday %></td>
+        <td><%= staff.age %></td>
+        <td><%= staff.job %></td>
+        <td><%= staff.region%></td>
+        <td><%= staff.memo%></td>
+        <td><%= link_to 'Show', staff %></td>
+        <td><%= link_to 'Update', edit_staff_path(staff)%></td>
+        <td><%= link_to 'Delete',staff,
+        method: :delete, data: { confirm: 'Are you sure？' }%></td>
+      </tr>
+    <% end %>
+  </table>
+
+<%= link_to 'Add new', new_staff_path %>

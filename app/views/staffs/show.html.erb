@@ -1,0 +1,31 @@
+<h1>Staff details</h1>
+  <p>
+      <strong>Name：</strong>
+      <%= @staff.name %>
+  </p>
+  <p>
+      <strong>Email：</strong>
+      <%= @staff.email %>
+  </p>
+  
+  <p>
+      <strong>Birthday：</strong>
+      <%= @staff.birthday %>
+      <strong>Age：</strong>
+      <%= @staff.age %>
+  </p>
+  <p>
+      <strong>Job description：</strong>
+      <%= @staff.job %>
+  </p>
+  <p>
+      <strong>Region：</strong>
+      <%= @staff.region%>
+  </p>
+  <p>
+      <strong>Memo：</strong><br>
+      <%= @staff.memo %>
+  </p>
+
+
+  <%= link_to 'All Staffs', staffs_path%> 
