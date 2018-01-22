@@ -4,7 +4,7 @@ class StaffsController < ApplicationController
   end
 
   def show
-    @staff = Staff.find(params[:id])
+    set_staff
   end
 
   def new
@@ -22,11 +22,11 @@ class StaffsController < ApplicationController
   end
 
   def edit
-    @staff = Staff.find(params[:id])
+    set_staff
   end
   
   def update
-    @staff = Staff.find(params[:id])
+    set_staff
     if @staff.update(staff_params)
     flash[:success]= "Your information updated!"
     redirect_to @staff
@@ -36,7 +36,7 @@ class StaffsController < ApplicationController
   end
   
   def destroy
-    @staff = Staff.find(params[:id])
+    set_staff
     if @staff.destroy
     flash[:success]= "Your information deleted!"
     redirect_to @staff
@@ -48,6 +48,11 @@ class StaffsController < ApplicationController
   private
   
   # Strong Parameter
+  
+  def set_staff
+     @staff = Staff.find(params[:id])
+  end
+  
   
   def staff_params
     params.require(:staff).

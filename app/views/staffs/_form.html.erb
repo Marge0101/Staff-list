@@ -1,4 +1,18 @@
 <%= form_for(@staff) do |f| %>
+
+<!--error message start -->
+<% if @staff.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <h3><%= @staff.errors.count %> errors</h3>
+    <ul>
+    <% @staff.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<!--error message end -->
+
 <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
