@@ -44,6 +44,17 @@
 </div>
 
 <div class="field">
+    <% if @staff.image? %>
+      <div class="thumbnail">
+        <%= image_tag @staff.image.url %>
+      </div>
+    <% end %><br>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+</div>
+
+<div class="field">
     <div class="action ">
     <%= f.submit %>
     </div>

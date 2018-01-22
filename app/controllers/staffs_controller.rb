@@ -56,6 +56,6 @@ class StaffsController < ApplicationController
   
   def staff_params
     params.require(:staff).
-    permit(:name,:email,:birthday,:job,:region,:memo)
+    permit(:name,:email,:birthday,:job,:region,:memo,:image, :image_cache, :remove_image)
   end
 end

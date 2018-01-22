@@ -26,6 +26,13 @@
       <strong>Memo：</strong><br>
       <%= @staff.memo %>
   </p>
-
+  <p>
+    <strong>Image:</strong>
+    <% if @staff.image? %>
+      <div class="thumbnail">
+        <%= image_tag @staff.image_url %>
+      </div>
+    <% end %>
+  </p>
 
   <%= link_to 'All Staffs', staffs_path%> 
